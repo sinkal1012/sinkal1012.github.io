@@ -113,14 +113,14 @@ section:hover {
     max-height: 0;
     opacity: 0;
     transition: max-height 0.5s ease, opacity 0.5s ease;
-    padding: 15px; /* Padding hozzáadása a szöveg köré */
+    padding: 15px;
 }
 
 .accordion-body.open {
     display: block;
-    max-height: 200px; /* Maximum height */
+    max-height: 200px;
     opacity: 1;
-    padding: 15px; /* Padding megtartása */
+    padding: 15px;
 }
 
 
