@@ -131,6 +131,13 @@ section:hover {
     margin-right: 15px;
 }
 
+#cat-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px; 
+    margin: 20px 0; 
+}
+
 footer {
     text-align: center;
     padding: 1rem;

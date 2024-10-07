@@ -1,4 +1,3 @@
-
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -28,6 +27,12 @@ accordionHeaders.forEach(header => {
                 body.style.maxHeight = scrollHeight; 
                 body.style.opacity = "1"; 
             });
+
+           
+            if (header.textContent.includes("macskás képet")) {
+                fetchRandomCatImage();
+            }
+
         } else {
             body.classList.remove('open');
             body.style.maxHeight = body.scrollHeight + "px";
@@ -48,3 +53,17 @@ accordionHeaders.forEach(header => {
         }
     });
 });
+
+
+function fetchRandomCatImage() {
+    const catImageElement = document.getElementById('cat-image');
+    fetch('https://api.thecatapi.com/v1/images/search')
+        .then(response => response.json())
+        .then(data => {
+            const randomCatImageUrl = data[0].url;
+            catImageElement.src = randomCatImageUrl;
+        })
+        .catch(error => {
+            console.error('Hiba történt a macskás kép letöltésekor:', error);
+        });
+}
